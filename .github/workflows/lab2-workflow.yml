@@ -13,9 +13,6 @@ on:
         type: string
         required: true
 
-
-
-
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -27,3 +24,7 @@ jobs:
     steps:
       - name: Printing Custom Message
         run: echo ${{inputs.custom_message}}
+
+      - name: Printing run-job boolean value
+        if: ${{ inputs.run-job == 'true' }} 
+        run: echo   ${{inputs.custom_message}}
